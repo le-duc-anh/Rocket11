@@ -23,8 +23,7 @@ FROM 		`Group`
 ORDER BY 	Create_Date DESC 
 LIMIT 		5;
 
-DELETE 
-FROM 		Exam 
+DELETE FROM Exam 
 WHERE 		Create_Date < '2019-12-20';
 
 UPDATE 		`Account` 
