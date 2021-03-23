@@ -1,18 +1,45 @@
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import javafx.util.Duration;
 
-public class Program {
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author my pc
+ */
+public class Dateformat {
 
     public static void main(String[] args) {
-        
+
+        Group group1 = new Group();
+        group1.id = 1;
+        group1.name = "Java Fresher";
+        group1.createdate = new Date(2020, 04, 21);
+
+        Group group2 = new Group();
+        group2.id = 2;
+        group2.name = "DB Fresher";
+        group2.createdate = new Date(2020, 05, 22);
+
+        Group group3 = new Group();
+        group3.id = 3;
+        group3.name = "C++ Fresher";
+        group3.createdate = new Date(2020, 06, 23);
+
         Department department1 = new Department();
         department1.id = 1;
         department1.name = "Sale";
 
         Department department2 = new Department();
         department2.id = 2;
-        department2.name = "Marketing";
+        department2.name = "Marketting";
 
         Department department3 = new Department();
         department3.id = 3;
@@ -20,19 +47,19 @@ public class Program {
 
         Position position1 = new Position();
         position1.id = 1;
-        position1.name = "Dev";
+        position1.name = "Manager";
 
         Position position2 = new Position();
         position2.id = 2;
-        position2.name = "Test";
+        position2.name = "Team Leader";
 
         Position position3 = new Position();
         position3.id = 3;
-        position3.name = "PM";
+        position3.name = "Trainee";
 
         Account account1 = new Account();
         account1.id = 1;
-        account1.createdate = new Date(2021, 03, 17);
+        account1.createdate = new Date(2020, 03, 17);
         account1.department = department1;
         account1.email = "An@gmail.com";
         account1.fullname = "Nguyen Van An";
@@ -41,7 +68,7 @@ public class Program {
 
         Account account2 = new Account();
         account2.id = 2;
-        account2.createdate = new Date(2021, 01, 11);
+        account2.createdate = new Date(2020, 01, 9);
         account2.department = department1;
         account2.email = "Linh@gmail.com";
         account2.fullname = "Nguyen Hoai Linh";
@@ -50,46 +77,12 @@ public class Program {
 
         Account account3 = new Account();
         account3.id = 3;
-        account3.createdate = new Date(2021, 02, 20);
+        account3.createdate = new Date(2020, 03, 19);
         account3.department = department2;
         account3.email = "ha@gmail.com";
         account3.fullname = "Pham Hai Ha";
         account3.position = position1;
         account3.username = "Ha.phamhai";
-
-        Group group1 = new Group();
-        group1.id = 1;
-        group1.name = "Java Fresher";
-        group1.createdate = new Date(2021, 01, 11);
-
-        Group group2 = new Group();
-        group2.id = 2;
-        group2.name = "DB Fresher";
-        group2.createdate = new Date(2021, 02, 20);
-
-        Group group3 = new Group();
-        group3.id = 3;
-        group3.name = "C++ Fresher";
-        group3.createdate = new Date(2021, 03, 17);
-
-        GroupAccount groupaccount1 = new GroupAccount();
-        groupaccount1.account = account1;
-        groupaccount1.group = group1;
-        groupaccount1.joindate = new Date(2021, 03, 17);
-
-        GroupAccount groupaccount2 = new GroupAccount();
-        groupaccount1.account = account2;
-        groupaccount1.group = group2;
-        groupaccount1.joindate = new Date(2021, 03, 17);
-
-        GroupAccount groupaccount3 = new GroupAccount();
-        groupaccount1.account = account3;
-        groupaccount1.group = group3;
-        groupaccount1.joindate = new Date(2021, 03, 17);
-
-        GroupAccount[] groupaccounts = {groupaccount1, groupaccount2, groupaccount3};
-        group1.accounts = groupaccounts;
-        account1.groups = groupaccounts;
 
         CategoryQuestion category1 = new CategoryQuestion();
         category1.id = 1;
@@ -111,7 +104,6 @@ public class Program {
         type2.id = 2;
         type2.name = "Multi-choice";
 
-        // Create Question
         Question question1 = new Question();
         question1.categoryquestion = category1;
         question1.content = "Dac diem chinh cua Java";
@@ -170,17 +162,48 @@ public class Program {
         answer2.isCorrect = false;
         answer2.question = question1;
 
-        System.out.println(department1.id);
-        System.out.println(department1.name);
-        System.out.println(position1.id);
-        System.out.println(position1.name);
-        System.out.println(account1.id);
-        System.out.println(account1.createdate);
-        System.out.println(account1.department);
-        System.out.println(account1.email);
-        System.out.println(account1.fullname);
-        System.out.println(account1.username);
-        System.out.println(account1.position);
-        System.out.println(account1.groups);
+        // Q1.
+        Locale locale = new Locale("vi", "VN");
+
+        DateFormat dateformat = DateFormat.getDateInstance(DateFormat.DEFAULT,
+                locale);
+
+        String date = dateformat.format(account1.createdate);
+
+        System.out.println(exam1.code + ": " + date);
+
+        // Q2.
+        String pattern = "yyyy-MM-dd-HH-mm-ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        Exam[] exams = {exam1, exam2};
+        for (Exam exam : exams) {
+            date = simpleDateFormat.format(exam.createdate);
+            System.out.println(exam.code + ": " + date);
+        }
+
+        // Q3.
+        pattern = "yyyy";
+        simpleDateFormat = new SimpleDateFormat(pattern);
+        for (Exam exam : exams) {
+            date = simpleDateFormat.format(exam.createdate);
+            System.out.println(exam.code + ": " + date);
+        }
+
+        // Q4.
+        pattern = "yyyy-MM";
+        simpleDateFormat = new SimpleDateFormat(pattern);
+        for (Exam exam : exams) {
+            date = simpleDateFormat.format(exam.createdate);
+            System.out.println(exam.code + ": " + date);
+        }
+
+        // Q6.
+        pattern = "MM-dd";
+        simpleDateFormat = new SimpleDateFormat(pattern);
+        for (Exam exam : exams) {
+            date = simpleDateFormat.format(exam.createdate);
+            System.out.println(exam.code + ": " + date);
+        }
     }
 }
