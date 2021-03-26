@@ -66,17 +66,17 @@ public class Constructor {
         System.out.println(group);
 
         // b
-        Account creator = new Account(1, "dang1@gmail.com", "dangblack1", "Nguyễn Hải", "Đăng1");
-        Account account2 = new Account(2, "dang2@gmail.com", "dangblack2", "Nguyễn Hải", "Đăng2");
-        Account account3 = new Account(3, "dang3@gmail.com", "dangblack3", "Nguyễn Hải", "Đăng3");
+        Account creator = new Account(1, "anh1@gmail.com", "ducanh1", "Le", "Duc Anh1");
+        Account account2 = new Account(2, "anh2@gmail.com", "ducanh2", "le", "Duc Anh2");
+        Account account3 = new Account(3, "anh3@gmail.com", "ducanh3", "Le", "Duc Anh3");
         Account[] accounts = {creator, account2, account3};
-        Group group1 = new Group(1, "Sale", creator, accounts, LocalDate.parse("2020-05-15"));
+        Group group1 = new Group(1, "Sale", creator, accounts, LocalDate.parse("2021-04-15"));
         System.out.println(group1);
 
         // c
-        String[] usernames = {"dangblack1", "dangblack2", "dangblack3"};
+        String[] usernames = {"ducanh1", "ducanh2", "ducanh3"};
         System.out.println(group1);
-        Group group2 = new Group(2, "Boss of Director", creator, usernames, LocalDate.parse("2020-05-15"));
+        Group group2 = new Group(2, "Boss of Director", creator, usernames, LocalDate.parse("2021-04-15"));
         System.out.println(group2);
 
     }
