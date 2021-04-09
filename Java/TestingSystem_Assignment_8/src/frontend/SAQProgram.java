@@ -5,10 +5,13 @@
  */
 package frontend;
 
-/**
- *
- * @author my pc
- */
+import backend.StackAndQueue;
+
 public class SAQProgram {
-    
+
+    public static void main(String[] args) {
+        StackAndQueue stackAndQueue = new StackAndQueue();
+        stackAndQueue.question2();
+    }
+
 }
