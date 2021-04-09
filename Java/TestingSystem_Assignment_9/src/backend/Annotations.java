@@ -5,10 +5,21 @@
  */
 package backend;
 
+import entity.Student;
+
 /**
  *
  * @author my pc
  */
 public class Annotations {
-    
+
+    @SuppressWarnings("deprecation")
+    public void question2() {
+        Student student = new Student(1, "Nguyễn Văn A");
+        System.out.println(student.getId());
+        System.out.println(student.getName());
+
+        System.out.println(student.getIdV2());
+
+    }
 }
