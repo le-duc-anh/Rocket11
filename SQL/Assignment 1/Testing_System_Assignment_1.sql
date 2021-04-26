@@ -151,11 +151,11 @@ VALUES  				('1'				,'Garbage Collection is manual process'						,'1'				,'2'		,
 						('5'				,'How many Primary keys can have in a table?'				,'3'				,'2'		,'5'		,'2020-05-10');
 
 INSERT INTO Answer		( Answers_ID		,Content					,Question_ID	 	,isCorrect)
-VALUES                  ('1'				,'False'					,'1'				,'1'),
-						('2'				,'Use of pointers'			,'2'				,'1'),
-                        ('3'				,'Structure Query Language'	,'3'				,'1'),
-                        ('4'				,'Virtual tables'			,'4'				,'1'),
-                        ('5'				,'Only 1'					,'5'				,'1');
+VALUES                  ('1'				,'False'					,'1'				,1),
+						('2'				,'Use of pointers'			,'2'				,1),
+                        ('3'				,'Structure Query Language'	,'3'				,1),
+                        ('4'				,'Virtual tables'			,'4'				,1),
+                        ('5'				,'Only 1'					,'5'				,1);
 
 INSERT INTO Exam				(Exam_ID		,Code	,Title		,Category_ID	,Duration	,Creator_ID	,Create_Date)
 VALUES                        	('1'			,'001'	,'Exam1'	,'1'			,'90'		,'5'		,'2020-05-10'),

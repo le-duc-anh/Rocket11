@@ -18,8 +18,8 @@ public class InnerClass {
     public void question1() {
 
         CPU cpu = new CPU(100);
-        CPU.Ram ram = cpu.new Ram(8, "HP");
-        CPU.Processor processor = cpu.new Processor(4, "Dell");
+        CPU.Ram ram = cpu.new Ram(1, "HP");
+        CPU.Processor processor = cpu.new Processor(2, "Dell");
 
         // getClockspeed
         System.out.println(ram.getClockSpeed());
